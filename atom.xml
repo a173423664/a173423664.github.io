@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>CrissWuBlog</title>
+  
+  <subtitle>成為一個厲害得普通人</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-04-07T15:18:48.397Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Criss Wu</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo教程</title>
+    <link href="http://yoursite.com/2019/04/07/Hexo%E6%95%99%E7%A8%8B/"/>
+    <id>http://yoursite.com/2019/04/07/Hexo教程/</id>
+    <published>2019-04-07T15:05:55.000Z</published>
+    <updated>2019-04-07T15:18:48.397Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Hexo教程" scheme="http://yoursite.com/categories/Hexo%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="-Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>原型对象总结</title>
+    <link href="http://yoursite.com/2019/04/07/%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2019/04/07/原型对象总结/</id>
+    <published>2019-04-07T14:03:20.000Z</published>
+    <updated>2019-04-08T00:01:29.067Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a><h2 id="原型对象"><a href="#原型对象" class="headerlink" title="原型对象"></a>原型对象</h2><blockquote><p>函数的prototype属性</p><ul><li>每个函数都有一个prototype属性,它默认指向一个Object空对象(即称为:原型对象)</li><li>原型对象中有一个constructor,它指向函数对象</li></ul></blockquote><ul><li>给原型对象添加属性(一般都是方法)<ul><li>作用: 函数的实例对象自动拥有原型中的属性(方法)</li><li>实例对象可以引用原型对象添加的属性(一般是方法);<blockquote><p>显式原型和隐式原型</p></blockquote></li></ul></li><li>每个函数fucntion都有一个prototype,即显式原型</li><li>每个实例对象都有一个<strong>proto</strong>,称为隐式原型</li><li>实例对象的隐性原型对应的值,为其对应的构造函数的显式原型的值</li><li>总结:</li><li>函数的prototype属性:在定义函数时自动添加,默认值是一个空Object对象(也就是执行函数定义时自动添加了prototype属性)</li><li>注意prototype保存的值是地址值,它是一个引用变量属性.</li><li>函数的<strong>proto</strong>属性:在创建对象时自动添加,默认值为prototype的值</li><li><p>程序员能直接操作显式对象,但不能直接操作隐式对象(ES6之前)</p></li><li><p>执行函数定义与执行函数的区别</p><ul><li>执行函数定义的时候,函数体还没有执行,只是定义了函数,本质上只是创建了一个函数对象 </li><li>加()的时候函数体才会执行 调用 </li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;原型对象&quot;&gt;&lt;a href=&quot;#原型对象&quot; class=&quot;headerlink&quot; title=&quot;原型对象&quot;&gt;&lt;/a&gt;原型对象&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;函数的prototype属性&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;每个函
+      
+    
+    </summary>
+    
+      <category term="面向对象" scheme="http://yoursite.com/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    
+    
+      <category term="-Javascript -面向对象" scheme="http://yoursite.com/tags/Javascript-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2019/04/07/hello-world/"/>
+    <id>http://yoursite.com/2019/04/07/hello-world/</id>
+    <published>2019-04-07T10:08:12.650Z</published>
+    <updated>2019-04-08T00:01:27.385Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a h
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
