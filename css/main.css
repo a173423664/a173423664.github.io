@@ -1771,7 +1771,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #0105ff;
+  background: #fb2bff;
 }
 .feed-link,
 .chat {
@@ -2963,11 +2963,6 @@ ul.breadcrumb li+li:last-child {
     margin: 8px 0 0;
   }
 }
-.post {
-  padding: 25px;
-  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.7);
-  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.7);
-}
 @media screen and (min-width: 1200px) {
   body {
     background-image: url("/images/beijing1.jpg");
@@ -2978,4 +2973,9 @@ ul.breadcrumb li+li:last-child {
   #footer a {
     color: #eee;
   }
+}
+.post {
+  padding: 25px;
+  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.7);
+  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.7);
 }
