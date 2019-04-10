@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="原型对象 函数的prototype属性  每个函数都有一个prototype属性,它默认指向一个Object空对象(即称为:原型对象) 原型对象中有一个constructor,它指向函数对象    给原型对象添加属性(一般都是方法) 作用: 函数的实例对象自动拥有原型中的属性(方法) 实例对象可以引用原型对象添加的属性(一般是方法); 显式原型和隐式原型     每个函数fucntion都有一个">
-<meta name="keywords" content="-Javascript -面向对象">
+  <meta name="description" content="常用方法 array.filter(callback[, thisArg]);   filter是一个常用的数组操作,它用于将Array的不符合条件的元素过滤出来,返回由符合条件元素组成的新列表 和map()类似,filter也接收一个函数,和map()不同的是,filter()把传入的函数一次作用于每个元素,然后根据返回值是true还是flase决定保留还是丢弃该元素. filter()接收的">
+<meta name="keywords" content="es6,数组">
 <meta property="og:type" content="article">
-<meta property="og:title" content="原型对象总结">
-<meta property="og:url" content="http://yoursite.com/2019/04/07/原型对象总结/index.html">
+<meta property="og:title" content="es6常用数组操作及总结">
+<meta property="og:url" content="http://yoursite.com/2019/04/10/es6常用数组操作及总结/index.html">
 <meta property="og:site_name" content="CrissWuBlog">
-<meta property="og:description" content="原型对象 函数的prototype属性  每个函数都有一个prototype属性,它默认指向一个Object空对象(即称为:原型对象) 原型对象中有一个constructor,它指向函数对象    给原型对象添加属性(一般都是方法) 作用: 函数的实例对象自动拥有原型中的属性(方法) 实例对象可以引用原型对象添加的属性(一般是方法); 显式原型和隐式原型     每个函数fucntion都有一个">
+<meta property="og:description" content="常用方法 array.filter(callback[, thisArg]);   filter是一个常用的数组操作,它用于将Array的不符合条件的元素过滤出来,返回由符合条件元素组成的新列表 和map()类似,filter也接收一个函数,和map()不同的是,filter()把传入的函数一次作用于每个元素,然后根据返回值是true还是flase决定保留还是丢弃该元素. filter()接收的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-08T00:01:29.067Z">
+<meta property="og:updated_time" content="2019-04-10T01:38:15.678Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="原型对象总结">
-<meta name="twitter:description" content="原型对象 函数的prototype属性  每个函数都有一个prototype属性,它默认指向一个Object空对象(即称为:原型对象) 原型对象中有一个constructor,它指向函数对象    给原型对象添加属性(一般都是方法) 作用: 函数的实例对象自动拥有原型中的属性(方法) 实例对象可以引用原型对象添加的属性(一般是方法); 显式原型和隐式原型     每个函数fucntion都有一个">
+<meta name="twitter:title" content="es6常用数组操作及总结">
+<meta name="twitter:description" content="常用方法 array.filter(callback[, thisArg]);   filter是一个常用的数组操作,它用于将Array的不符合条件的元素过滤出来,返回由符合条件元素组成的新列表 和map()类似,filter也接收一个函数,和map()不同的是,filter()把传入的函数一次作用于每个元素,然后根据返回值是true还是flase决定保留还是丢弃该元素. filter()接收的">
 
 
 
@@ -117,7 +117,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/04/07/原型对象总结/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/10/es6常用数组操作及总结/">
 
 
 
@@ -127,7 +127,7 @@
   };
 </script>
 
-  <title>原型对象总结 | CrissWuBlog</title>
+  <title>es6常用数组操作及总结 | CrissWuBlog</title>
   
 
 
@@ -347,7 +347,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/07/原型对象总结/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/10/es6常用数组操作及总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Criss Wu">
@@ -364,7 +364,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">原型对象总结
+          <h1 class="post-title" itemprop="name headline">es6常用数组操作及总结
 
               
             
@@ -390,24 +390,12 @@
                 
               
 
-              <time title="创建时间：2019-04-07 22:03:20" itemprop="dateCreated datePublished" datetime="2019-04-07T22:03:20+08:00">2019-04-07</time>
+              <time title="创建时间：2019-04-10 09:01:48 / 修改时间：09:38:15" itemprop="dateCreated datePublished" datetime="2019-04-10T09:01:48+08:00">2019-04-10</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-08 08:01:29" itemprop="dateModified" datetime="2019-04-08T08:01:29+08:00">2019-04-08</time>
               
             
           </span>
@@ -424,7 +412,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/面向对象/" itemprop="url" rel="index"><span itemprop="name">面向对象</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/es6/" itemprop="url" rel="index"><span itemprop="name">es6</span></a></span>
 
                 
                 
@@ -460,36 +448,79 @@
 
       
         <a id="more"></a>
-<h2 id="原型对象"><a href="#原型对象" class="headerlink" title="原型对象"></a>原型对象</h2><blockquote>
-<p>函数的prototype属性</p>
+<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><ol>
+<li><code>array.filter(callback[, thisArg]);</code></li>
+</ol>
 <ul>
-<li>每个函数都有一个prototype属性,它默认指向一个Object空对象(即称为:原型对象)</li>
-<li>原型对象中有一个constructor,它指向函数对象</li>
+<li>filter是一个常用的数组操作,它用于将Array的不符合条件的元素过滤出来,返回由符合条件元素组成的新列表</li>
+<li>和map()类似,filter也接收一个函数,和map()不同的是,filter()把传入的函数一次作用于每个元素,然后根据返回值是true还是flase决定保留还是丢弃该元素.</li>
+<li>filter()接收的是一个回调函数,通常我们只使用它的第一个参数,表示Array的某个元素,表示元素的位置和元素本身.</li>
 </ul>
-</blockquote>
+<ol start="2">
+<li>array.map(callback[, thisArg]);</li>
+</ol>
 <ul>
-<li>给原型对象添加属性(一般都是方法)<ul>
-<li>作用: 函数的实例对象自动拥有原型中的属性(方法)</li>
-<li>实例对象可以引用原型对象添加的属性(一般是方法);<blockquote>
-<p>显式原型和隐式原型</p>
-</blockquote>
+<li>返回一个新数组,新数组中每个元素都是调用callback函数后返回的结果,</li>
+<li>在实际使用的时候,我们可以利用map方法以便利的获取对象中的特定的属性值</li>
+<li>注意:array.map由于不具有过滤的功能，因此array调用map函数时，如果array中的数据并不是每一个都会return，则必须先filter，然后再map，即map调用时必须是对数组中的每一个元素都有效。<figure class="highlight plain"><figcaption><span>maped </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">``` maped: [&apos;aac&apos;, &apos;bbc&apos;];</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-</li>
-<li>每个函数fucntion都有一个prototype,即显式原型</li>
-<li>每个实例对象都有一个<strong>proto</strong>,称为隐式原型</li>
-<li>实例对象的隐性原型对应的值,为其对应的构造函数的显式原型的值</li>
-<li>总结:</li>
-<li>函数的prototype属性:在定义函数时自动添加,默认值是一个空Object对象(也就是执行函数定义时自动添加了prototype属性)</li>
-<li>注意prototype保存的值是地址值,它是一个引用变量属性.</li>
-<li>函数的<strong>proto</strong>属性:在创建对象时自动添加,默认值为prototype的值</li>
-<li><p>程序员能直接操作显式对象,但不能直接操作隐式对象(ES6之前)</p>
-</li>
-<li><p>执行函数定义与执行函数的区别</p>
+<ol start="3">
+<li>array.includes(searchElement, fromIndex);</li>
+</ol>
 <ul>
-<li>执行函数定义的时候,函数体还没有执行,只是定义了函数,本质上只是创建了一个函数对象 </li>
-<li>加()的时候函数体才会执行 调用 </li>
+<li>inlcludes()方法用来判断一个数组是否包含一个指定的值,返回true或者false.searchElement要查找的元素,fromIndex开始查找的索引的位置<br><code>[1, 2, 3].includes(2, 2);  // false</code></li>
 </ul>
+<ol start="4">
+<li>array.findIndex(callback[, thisArg]);</li>
+</ol>
+<ul>
+<li>返回通过callback函数测试的第一个元素的索引，否则返回-1，callback函数定义同上。<br><code>const findIndex = [1, 2, 3].findIndex(element =&gt; element &gt; 1);  // findIndex: 1</code></li>
+</ul>
+<ol start="5">
+<li>array.find(callback[, thisArg]);</li>
+</ol>
+<ul>
+<li>返回通过callback函数测试的第一个元素，否则返回undefined，callback函数定义同上。<br><code>const finded = [1, 2, 3].find(element =&gt; element &gt; 1); // finded: 2</code></li>
+</ul>
+<ol start="6">
+<li>array.slice(begin, end)</li>
+</ol>
+<ul>
+<li>返回一个新数组，包含原数组从begin 到 end(不包含end)索引位置的所有元素。<br><code>const newArray = [&#39;zero&#39;, &#39;one&#39;, &#39;two&#39;, &#39;three&#39;].slice(1, 3);   // newArray: [&#39;one&#39;, &#39;two&#39;];</code></li>
+</ul>
+<ol start="7">
+<li>array.splice(start[, deleteCount, item1, item2, …]);</li>
+</ol>
+<ul>
+<li>通过删除现有元素和/或添加新元素来更改一个数组的内容.start指定修改的开始位置.deleteCount:从start位置开始要删除的元素个数;要添加进数组的元素,从start位置开始.</li>
+<li>注意:返回值是由被删除数组组成的数组,如果只删除了一个元素,则返回只包含一个元素的数组.如果没有删除元素,则返回空数组.</li>
+<li>如果deleteCount大于start之后的元素的总数.则从start后面的元素都将被删除(含start).<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const myFish = [&apos;angel&apos;, &apos;clown&apos;, &apos;mandarin&apos;, &apos;sturgeon&apos;];</span><br><span class="line">const deleted = myFish.splice(2, 0, &apos;drum&apos;); // 在索引为2的位置插入&apos;drum&apos;</span><br><span class="line">// myFish 变为 [&quot;angel&quot;, &quot;clown&quot;, &quot;drum&quot;, &quot;mandarin&quot;, &quot;sturgeon&quot;]，deleted为[]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="8">
+<li>array.concat(array1, array2,…arrayN);</li>
+</ol>
+<ul>
+<li>合并多个数组,返回合并后的数组,原数组没有变化<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const array = [1,2].concat([&apos;a&apos;, &apos;b&apos;], [&apos;name&apos;]);</span><br><span class="line">// [1, 2, &quot;a&quot;, &quot;b&quot;, &quot;name&quot;]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="9">
+<li>array.pop() 与 array.shift();</li>
+</ol>
+<ul>
+<li><p>pop为从数组中删除最后一个元素，并返回最后一个元素的值，原数组的最后一个元素被删除。数组为空时返回undefined。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[1, 2, 3].pop();</span><br><span class="line">// 3</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>shift删除数组的第一个元素，并返回第一个元素，原数组的第一个元素被删除。数组为空返回undefined。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const shifted = [&apos;one&apos;, &apos;two&apos;, &apos;three&apos;].shift();</span><br><span class="line">// shifted: &apos;one&apos;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="10">
+<li>array.push(element1, element2, ….elementN) 与 array.unshift(element1, element2, …elementN);</li>
+</ol>
+<ul>
+<li>push是将一个或多个元素添加到数组的末尾，并返回新数组的长度; unshift将一个或多个元素添加到数组的开头，并返回新数组的长度。唯一的区别就是插入的位置不同。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const arr = [1, 2, 3];</span><br><span class="line">const length = arr.push(4, 5);</span><br><span class="line">// arr: [1, 2, 3, 4, 5]; length: 5</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -515,7 +546,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Javascript-面向对象/" rel="tag"><i class="fa fa-tag"></i> -Javascript -面向对象</a>
+            <a href="/tags/es6/" rel="tag"><i class="fa fa-tag"></i> es6</a>
+          
+            <a href="/tags/数组/" rel="tag"><i class="fa fa-tag"></i> 数组</a>
           
         </div>
       
@@ -528,15 +561,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/04/10/title/" rel="next" title="title">
+                <i class="fa fa-chevron-left"></i> title
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/08/Vue基础语法/" rel="prev" title="Vue基础语法二">
-                Vue基础语法二 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -753,7 +786,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#原型对象"><span class="nav-number">1.</span> <span class="nav-text">原型对象</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用方法"><span class="nav-number">1.</span> <span class="nav-text">常用方法</span></a></li></ol></div>
             
 
           </div>
