@@ -96,17 +96,18 @@
 
 
 
-  <meta name="description" content="Vue基础之Vue模板语法插值 数据绑定最常见的的形式就是使用Mustache语法(双大括号)的文本插值,双大括号会将数据解析成纯文本&amp;lt;span&amp;gt;Message:&amp;lt;/span&amp;gt; 如果Mustache标签将会被替代为对应数据对象上的msg属性的值.无论何时,绑定的数据对象上的msg属性发生了变化, 插值处的内容都会更新  纯HTML 双大括号会将数据解释为纯文本,而非 HT">
+  <meta name="description" content="Sass学习笔记,sass学习入门sass是css预处理器 sass是基于ruby的,使用sass我们需要安装ruby sass和scss其实是同一种东西,我们平时都称之为sass,两者不同之处有以下两点:   文件扩展名不同，Sass 是以“.sass”后缀为扩展名，而 SCSS 是以“.scss”后缀为扩展名 语法书写方式不同，Sass 是以严格的缩进式语法规则来书写，不带大括号({})和分号">
+<meta name="keywords" content="Sass基础语法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue基础语法一">
-<meta property="og:url" content="http://yoursite.com/2019/04/10/Vue基础语法一/index.html">
+<meta property="og:title" content="Sass学习笔记">
+<meta property="og:url" content="http://yoursite.com/2019/04/13/sass学习笔记/index.html">
 <meta property="og:site_name" content="CrissWuBlog">
-<meta property="og:description" content="Vue基础之Vue模板语法插值 数据绑定最常见的的形式就是使用Mustache语法(双大括号)的文本插值,双大括号会将数据解析成纯文本&amp;lt;span&amp;gt;Message:&amp;lt;/span&amp;gt; 如果Mustache标签将会被替代为对应数据对象上的msg属性的值.无论何时,绑定的数据对象上的msg属性发生了变化, 插值处的内容都会更新  纯HTML 双大括号会将数据解释为纯文本,而非 HT">
+<meta property="og:description" content="Sass学习笔记,sass学习入门sass是css预处理器 sass是基于ruby的,使用sass我们需要安装ruby sass和scss其实是同一种东西,我们平时都称之为sass,两者不同之处有以下两点:   文件扩展名不同，Sass 是以“.sass”后缀为扩展名，而 SCSS 是以“.scss”后缀为扩展名 语法书写方式不同，Sass 是以严格的缩进式语法规则来书写，不带大括号({})和分号">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-12T23:30:01.441Z">
+<meta property="og:updated_time" content="2019-04-13T12:32:09.980Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue基础语法一">
-<meta name="twitter:description" content="Vue基础之Vue模板语法插值 数据绑定最常见的的形式就是使用Mustache语法(双大括号)的文本插值,双大括号会将数据解析成纯文本&amp;lt;span&amp;gt;Message:&amp;lt;/span&amp;gt; 如果Mustache标签将会被替代为对应数据对象上的msg属性的值.无论何时,绑定的数据对象上的msg属性发生了变化, 插值处的内容都会更新  纯HTML 双大括号会将数据解释为纯文本,而非 HT">
+<meta name="twitter:title" content="Sass学习笔记">
+<meta name="twitter:description" content="Sass学习笔记,sass学习入门sass是css预处理器 sass是基于ruby的,使用sass我们需要安装ruby sass和scss其实是同一种东西,我们平时都称之为sass,两者不同之处有以下两点:   文件扩展名不同，Sass 是以“.sass”后缀为扩展名，而 SCSS 是以“.scss”后缀为扩展名 语法书写方式不同，Sass 是以严格的缩进式语法规则来书写，不带大括号({})和分号">
 
 
 
@@ -116,7 +117,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/04/10/Vue基础语法一/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/13/sass学习笔记/">
 
 
 
@@ -126,7 +127,7 @@
   };
 </script>
 
-  <title>Vue基础语法一 | CrissWuBlog</title>
+  <title>Sass学习笔记 | CrissWuBlog</title>
   
 
 
@@ -346,7 +347,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/10/Vue基础语法一/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/13/sass学习笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Criss Wu">
@@ -363,7 +364,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Vue基础语法一
+          <h1 class="post-title" itemprop="name headline">Sass学习笔记
 
               
             
@@ -389,24 +390,12 @@
                 
               
 
-              <time title="创建时间：2019-04-10 22:14:31" itemprop="dateCreated datePublished" datetime="2019-04-10T22:14:31+08:00">2019-04-10</time>
+              <time title="创建时间：2019-04-13 18:56:39 / 修改时间：20:32:09" itemprop="dateCreated datePublished" datetime="2019-04-13T18:56:39+08:00">2019-04-13</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-13 07:30:01" itemprop="dateModified" datetime="2019-04-13T07:30:01+08:00">2019-04-13</time>
               
             
           </span>
@@ -423,7 +412,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Vue基础语法/" itemprop="url" rel="index"><span itemprop="name">Vue基础语法</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/sass/" itemprop="url" rel="index"><span itemprop="name">sass</span></a></span>
 
                 
                 
@@ -458,22 +447,44 @@
       
 
       
-        <a id="more"></a>
-<h2 id="Vue基础之Vue模板语法"><a href="#Vue基础之Vue模板语法" class="headerlink" title="Vue基础之Vue模板语法"></a>Vue基础之Vue模板语法</h2><h3 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h3><ul>
-<li>数据绑定最常见的的形式就是使用Mustache语法(双大括号)的文本插值,双大括号会将数据解析成纯文本<br><code>&lt;span&gt;Message:&lt;/span&gt;</code></li>
-<li>如果Mustache标签将会被替代为对应数据对象上的msg属性的值.无论何时,绑定的数据对象上的msg属性发生了变化,</li>
-<li>插值处的内容都会更新</li>
+        <h2 id="Sass学习笔记-sass学习入门"><a href="#Sass学习笔记-sass学习入门" class="headerlink" title="Sass学习笔记,sass学习入门"></a>Sass学习笔记,sass学习入门</h2><h3 id="sass是css预处理器"><a href="#sass是css预处理器" class="headerlink" title="sass是css预处理器"></a>sass是css预处理器</h3><ul>
+<li>sass是基于ruby的,使用sass我们需要安装ruby</li>
+<li>sass和scss其实是同一种东西,我们平时都称之为sass,两者不同之处有以下两点:</li>
 </ul>
-<h3 id="纯HTML"><a href="#纯HTML" class="headerlink" title="纯HTML"></a>纯HTML</h3><ul>
-<li>双大括号会将数据解释为纯文本,而非 HTML.为了输出真正的HTML,你需要使用v-html指令<br><code>&lt;div v-html=&quot;rawHtml&quot;&gt;&lt;/div&gt;</code></li>
-<li>此时被插入的内容都会被当做HTML–数据绑定会被忽略<h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3></li>
-<li>Vue允许你自定义过滤器,来实现一些常见的文本格式化功能.过滤器应该被添加上mustache插值尾部,由”管道符”标识起来<br><code></code></li>
-<li>过滤器可以串联</li>
-<li>过滤器是javascript函数,因此可以接受参数<h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3></li>
-<li>指令是带有(Directives)是带有v-前缀的特殊属性,指令属性的值预期是单一javascript表达式(除了v-for,之后再讨论).指令的职责就是当其表达式的值时,相应的将某些行为应用到DOM上<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3></li>
-<li>一些指令只能接受一个参数,在指令后以冒号指明,例如v-bind指令被用来更新HTML属性<br><code>&lt;a v-bind:href=&quot;url&quot;&gt;&lt;/a&gt;</code></li>
-<li>在这里href是参数,告知v-bind指令将该元素的href属性与表达式url值绑定<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3></li>
-<li>修饰符(Modifiers)是以半角句号.指明的特殊后缀,用于指出一个指令应该以特殊方法绑定</li>
+<ol>
+<li>文件扩展名不同，Sass 是以“.sass”后缀为扩展名，而 SCSS 是以“.scss”后缀为扩展名</li>
+<li>语法书写方式不同，Sass 是以严格的缩进式语法规则来书写，不带大括号({})和分号(;)，而 SCSS 的语法书写和我们的 CSS 语法书写方式非常类似。<h3 id="为什么要使用Sass"><a href="#为什么要使用Sass" class="headerlink" title="为什么要使用Sass"></a>为什么要使用Sass</h3></li>
+<li>因为css代码重复利用少,管理起来不方便,而用Sass来写代码可以使代码复用.方便快捷修改,比如要修改整站的某种颜色,只需要修改一个变量即可,</li>
+<li>或者对仅使用过一次的属性值,你可以赋予其一个简单易懂的变量名,让人一眼就知道这个属性值的用途.<h3 id="什么是css-reset"><a href="#什么是css-reset" class="headerlink" title="什么是css reset?"></a>什么是css reset?</h3></li>
+</ol>
+<ul>
+<li>HTML标签在浏览器中都有默认的样式,不同浏览器的默认样式之间存在差别.列入ul默认带有缩进的样式,在IE浏览器中,它的缩进是由margin实现的,而在Firefox下却是由padding实现的,开发时的默认样式可能会给我们带来许多浏览器兼容性的问题,影响开发效率.现在很流行的一种方法就是一开始将浏览器的默认样式全部覆盖掉,这就是CSS reset<h3 id="编译Sass"><a href="#编译Sass" class="headerlink" title="编译Sass"></a>编译Sass</h3></li>
+<li>单文件转换命令<br><code>sass input.scss output.css</code></li>
+<li>单文件监听命令<br><code>sass --watch input.scss:output.css</code></li>
+<li>如果你有很多的sass文件的目录，你也可以告诉sass监听整个目录：<br><code>sass --watch app/sass:public/stylesheets</code></li>
+</ul>
+<h2 id="sass语法"><a href="#sass语法" class="headerlink" title="sass语法"></a>sass语法</h2><h3 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h3><ul>
+<li>Sass使用$符号来标识变量(老版本使用!符号)比如$<code>sidebar-width</code>;</li>
+<li>为什么选择$符号呢？因为它好认、更具美感，且在CSS中并无他用，不会导致与现存或未来的css语法冲突。<h3 id="css嵌套"><a href="#css嵌套" class="headerlink" title="css嵌套"></a>css嵌套</h3></li>
+<li>父选择器的标识符&amp;<h3 id="import"><a href="#import" class="headerlink" title="@import"></a>@import</h3></li>
+<li>导入公共样式</li>
+<li>可以省略.scss后缀<h3 id="原生的css导入"><a href="#原生的css导入" class="headerlink" title="原生的css导入"></a>原生的css导入</h3></li>
+<li>因为sass的语法完全兼容css，所以把原始的css文件改名为.scss后缀，即可直接导入了。</li>
+<li>注意:// 这种注释不会出现在已经生成的css文件中<h3 id="混合器"><a href="#混合器" class="headerlink" title="混合器"></a>混合器</h3></li>
+<li>混合器使用@mixin标识符定义.</li>
+<li><p>使用@include引用变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@mixin rounded-corners &#123;</span><br><span class="line">  -moz-border-radius: 5px;</span><br><span class="line">  -webkit-border-radius: 5px;</span><br><span class="line">  border-radius: 5px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">notice &#123;</span><br><span class="line">  background-color: green;</span><br><span class="line">  border: 2px solid #00aa00;</span><br><span class="line">  @include rounded-corners;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><ul>
+<li><p>通过选择器继承继承样式(@extend)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.error &#123;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  background-color: #fdd;</span><br><span class="line">&#125;</span><br><span class="line">.seriousError &#123;</span><br><span class="line">  @extend .error;</span><br><span class="line">  border-width: 3px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意:不要继承后代样式</p>
+</li>
 </ul>
 
       
@@ -496,6 +507,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Sass基础语法/" rel="tag"><i class="fa fa-tag"></i> Sass基础语法</a>
+          
+        </div>
+      
 
       
       
@@ -505,8 +522,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/10/Vue计算属性/" rel="next" title="Vue计算属性">
-                <i class="fa fa-chevron-left"></i> Vue计算属性
+              <a href="/2019/04/10/Vue路由/" rel="next" title="Vue路由基础知识总结">
+                <i class="fa fa-chevron-left"></i> Vue路由基础知识总结
               </a>
             
           </div>
@@ -515,8 +532,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/10/Vue路由/" rel="prev" title="Vue路由基础知识总结">
-                Vue路由基础知识总结 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/13/前端面试题总结/" rel="prev" title="前端面试题总结">
+                前端面试题总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -744,7 +761,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue基础之Vue模板语法"><span class="nav-number">1.</span> <span class="nav-text">Vue基础之Vue模板语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#插值"><span class="nav-number">1.1.</span> <span class="nav-text">插值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#纯HTML"><span class="nav-number">1.2.</span> <span class="nav-text">纯HTML</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过滤器"><span class="nav-number">1.3.</span> <span class="nav-text">过滤器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指令"><span class="nav-number">1.4.</span> <span class="nav-text">指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数"><span class="nav-number">1.5.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修饰符"><span class="nav-number">1.6.</span> <span class="nav-text">修饰符</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sass学习笔记-sass学习入门"><span class="nav-number">1.</span> <span class="nav-text">Sass学习笔记,sass学习入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sass是css预处理器"><span class="nav-number">1.1.</span> <span class="nav-text">sass是css预处理器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要使用Sass"><span class="nav-number">1.2.</span> <span class="nav-text">为什么要使用Sass</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是css-reset"><span class="nav-number">1.3.</span> <span class="nav-text">什么是css reset?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译Sass"><span class="nav-number">1.4.</span> <span class="nav-text">编译Sass</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sass语法"><span class="nav-number">2.</span> <span class="nav-text">sass语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量声明"><span class="nav-number">2.1.</span> <span class="nav-text">变量声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css嵌套"><span class="nav-number">2.2.</span> <span class="nav-text">css嵌套</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#import"><span class="nav-number">2.3.</span> <span class="nav-text">@import</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原生的css导入"><span class="nav-number">2.4.</span> <span class="nav-text">原生的css导入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#混合器"><span class="nav-number">2.5.</span> <span class="nav-text">混合器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承"><span class="nav-number">2.6.</span> <span class="nav-text">继承</span></a></li></ol></li></ol></div>
             
 
           </div>
