@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="##js中常用的数组方法的总结 前言 我认为学习完一个知识点,想要真正掌握它,最好的方式就是你用自己的话把内容表达清楚,现在我开始将以前学习的知识整合起来,和大家一起提高   Array.map()   此方法是将数组中的每一元素调用一个提供的函数 作用:数组中的元素为原始数组调用函数处理后的值 参数:arr.map(function(item,index,arr){}) item:每一项,ind">
+<meta name="keywords" content="javascript基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组方法总结归纳">
+<meta property="og:url" content="http://yoursite.com/2019/04/14/数组方法总结归纳/index.html">
+<meta property="og:site_name" content="CrissWuBlog">
+<meta property="og:description" content="##js中常用的数组方法的总结 前言 我认为学习完一个知识点,想要真正掌握它,最好的方式就是你用自己的话把内容表达清楚,现在我开始将以前学习的知识整合起来,和大家一起提高   Array.map()   此方法是将数组中的每一元素调用一个提供的函数 作用:数组中的元素为原始数组调用函数处理后的值 参数:arr.map(function(item,index,arr){}) item:每一项,ind">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-15T01:21:56.301Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数组方法总结归纳">
+<meta name="twitter:description" content="##js中常用的数组方法的总结 前言 我认为学习完一个知识点,想要真正掌握它,最好的方式就是你用自己的话把内容表达清楚,现在我开始将以前学习的知识整合起来,和大家一起提高   Array.map()   此方法是将数组中的每一元素调用一个提供的函数 作用:数组中的元素为原始数组调用函数处理后的值 参数:arr.map(function(item,index,arr){}) item:每一项,ind">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="CrissWuBlog" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/04/14/数组方法总结归纳/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>数组方法总结归纳 | CrissWuBlog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CrissWuBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">成為一個厲害得普通人</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/14/数组方法总结归纳/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Criss Wu">
+      <meta itemprop="description" content="业精于勤,荒于嬉;行成于思,毁于随.">
+      <meta itemprop="image" content="/images/tongren.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CrissWuBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数组方法总结归纳
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-14 20:54:21" itemprop="dateCreated datePublished" datetime="2019-04-14T20:54:21+08:00">2019-04-14</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-15 09:21:56" itemprop="dateModified" datetime="2019-04-15T09:21:56+08:00">2019-04-15</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数组/" itemprop="url" rel="index"><span itemprop="name">数组</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>##js中常用的数组方法的总结</p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>我认为学习完一个知识点,想要真正掌握它,最好的方式就是你用自己的话把内容表达清楚,现在我开始将以前学习的知识整合起来,和大家一起提高</p>
+</blockquote>
+<ol>
+<li>Array.map()</li>
+</ol>
+<ul>
+<li>此方法是将数组中的每一元素调用一个提供的函数</li>
+<li>作用:数组中的元素为原始数组调用函数处理后的值</li>
+<li>参数:arr.map(function(item,index,arr){}) item:每一项,index:当前索引,ary:当前数组</li>
+<li>返回值:作为一个新的数组返回</li>
+<li>是否改变原始数组:不改变原数组,<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1, 2, 3, 4, 5]</span><br><span class="line">    let newArr = arr.map(x =&gt; x*2)</span><br><span class="line">    //arr= [1, 2, 3, 4, 5]   原数组保持不变</span><br><span class="line">    //newArr = [2, 4, 6, 8, 10] 返回新数组</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="2">
+<li>Array.forEach()</li>
+</ol>
+<ul>
+<li>此方法是将数组中的每一个元素执行提供的函数,没有返回值,直接改变原数组,注意与map方法区分<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1, 2, 3, 4, 5]</span><br><span class="line">   arr.forEach(x =&gt; x*2)</span><br><span class="line">   // arr = [2, 4, 6, 8, 10]  数组改变,注意和map区分</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="3">
+<li>Array.filter()</li>
+</ol>
+<ul>
+<li>此方法是将所有的元素进行判断,将满足条件的元素作为一个新数组返回,</li>
+<li>作用:创建一个新数组,新数组中的元素是通过检查指定数组中符合条件的所有元素</li>
+<li>返回值:返回一个新数组,</li>
+<li>是否改变原始数组:不会改变原始数组<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1, 2, 3, 4, 5]</span><br><span class="line">    const isBigEnough =&gt; value =&gt; value &gt;= 3</span><br><span class="line">    let newArr = arr.filter(isBigEnough )</span><br><span class="line">    //newNum = [3, 4, 5] 满足条件的元素返回为一个新的数组</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="4">
+<li>Array.some()</li>
+</ol>
+<ul>
+<li>此方法是将所有元素都进行判断返回一个布尔值,如果存在元素都满足判断条件,</li>
+<li>作用:检测数组中的元素是否满足指定条件</li>
+<li>返回值:布尔值则返回true,若所有元素都不满足判断条件,则返回fasle</li>
+<li>是否改变原始数组: 不改变<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let arr= [1, 2, 3, 4, 5]</span><br><span class="line">    const isLessThan4 =&gt; value =&gt; value &lt; 4</span><br><span class="line">    const isLessThan6 =&gt; value =&gt; value &gt; 6</span><br><span class="line">    arr.some(isLessThan4 ) //true</span><br><span class="line">    arr.some(isLessThan6 ) //false</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="5">
+<li>Array.reduce()</li>
+</ol>
+<ul>
+<li>此方法是所有元素调用返回函数,返回值为最后结果,传入的值必须是函数类型<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1, 2, 3, 4, 5]</span><br><span class="line">   const add = (a, b) =&gt; a + b</span><br><span class="line">   let sum = arr.reduce(add)</span><br><span class="line">   //sum = 15  相当于累加的效果</span><br><span class="line">   与之相对应的还有一个 Array.reduceRight() 方法，区别是这个是从右向左操作的</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="6">
+<li>Array.push()</li>
+</ol>
+<ul>
+<li>作用:此方法在数组的后面添加新元素</li>
+<li>参数:要添加的项</li>
+<li>返回值:新数组的长度</li>
+<li>是否改变原数组:改变</li>
+</ul>
+<ol start="7">
+<li>array.pop() </li>
+</ol>
+<ul>
+<li>作用:pop为从数组中删除最后一个元素</li>
+<li>参数:无</li>
+<li>返回值:被删除的项</li>
+<li>是否改变原数组:改变</li>
+<li>数组为空时返回undefined。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[1, 2, 3].pop();</span><br><span class="line">// 3</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="8">
+<li>Array.unshift()</li>
+</ol>
+<ul>
+<li>作用:此方法是将一个或多个元素添加到数组的开头</li>
+<li>参数:要添加的项,多项用逗号隔开</li>
+<li>返回值:返回新数组的长度<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1, 2, 3, 4, 5]</span><br><span class="line">    arr.unshift(6, 7)</span><br><span class="line">    console.log(arr) //[6, 7, 2, 3, 4, 5]</span><br><span class="line">    console.log(arr.length) //7</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol>
+<li>Array.shift()</li>
+</ol>
+<ul>
+<li>作用:此方法在数组后面删除第一个元素</li>
+<li>返回值:并返回被删除的项</li>
+<li>是否改变原数组:改变<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1, 2, 3, 4, 5]</span><br><span class="line">    arr.shift()</span><br><span class="line">    console.log(arr) //[2, 3, 4, 5]</span><br><span class="line">    console.log(arr.length) //4</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="10">
+<li>Array.isArray()</li>
+</ol>
+<ul>
+<li>判断一个对象是不是数组，返回的是布尔值</li>
+</ul>
+<ol start="11">
+<li>Array.concat()</li>
+</ol>
+<ul>
+<li>用于连接两个或多个数组</li>
+<li>参数:参数可以是具体的值,也可以是数组对象.可以是任意多个</li>
+<li>返回值:返回连接后的数组</li>
+<li>是否改变原数组:不改变<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let arr1 = [1, 2, 3]</span><br><span class="line">      arr2 = [4, 5]</span><br><span class="line">  let arr = arr1.concat(arr2)</span><br><span class="line">  console.log(arr)//[1, 2, 3, 4, 5]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol>
+<li>Array.toString()</li>
+</ol>
+<ul>
+<li>此方法将数组转化成字符串,并返回结果,默认用逗号分隔<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1, 2, 3, 4, 5];</span><br><span class="line">   let str = arr.toString()</span><br><span class="line">   console.log(str)// 1,2,3,4,5</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="13">
+<li>Array.join()</li>
+</ol>
+<ul>
+<li>用指定的分隔符将数组每一项拼接成字符串</li>
+<li>参数:指定的分隔符,如果省略该参数,则使用逗号作为分隔符</li>
+<li>返回值:拼接好的字符串</li>
+<li><p>是否改变原始数组:不改变</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var ary = [1,2,3,4,5];</span><br><span class="line">var res = ary.join(&apos;-&apos;);</span><br><span class="line">console.log(ary);  // [1, 2, 3, 4, 5]</span><br><span class="line">console.log(res);  // 1-2-3-4-5</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过上面这个列子可以看出和tostring的区别,join可以设置元素之间的间隔</p>
+</li>
+</ul>
+<ol start="14">
+<li>Array.splice()</li>
+</ol>
+<ul>
+<li>作用:万能方法可以实现增删改,</li>
+<li>返回值:被删除的项目</li>
+<li>是否改变原始数组:该方法会改变原始数组</li>
+<li>语法:Array.splice(index,howmany,item1….,itemn)</li>
+<li>index表示添加/删除项目的位置,howmany要删除项目的数量,item1…要新增的项目</li>
+</ul>
+<ol>
+<li>增加功能</li>
+</ol>
+<ul>
+<li><code>ary.splice(n,0,x，......,y);</code></li>
+<li>从数组的索引n开始，删除0项,在索引n的前边增加新的项，第三个参数开始都是用来填补删除的项目位置的<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var ary = [1,2,3,4,5];</span><br><span class="line">var res = ary.splice(1,0,6,7);</span><br><span class="line">console.log(ary);  // [1, 6, 7, 2, 3, 4, 5]</span><br><span class="line">console.log(res);  // [] 删除0项，返回一个空数组</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="2">
+<li>删除的功能</li>
+</ol>
+<ul>
+<li><code>ary.splice(n,m);</code></li>
+<li>从数组的索引n开始,删除m项<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var ary = [1,2,3,4,5];</span><br><span class="line">var res = ary.splice(1,2);</span><br><span class="line">console.log(ary);  // [1，4，5]</span><br><span class="line">console.log(res);  // [2，3]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="3">
+<li>修改的功能</li>
+</ol>
+<ul>
+<li><code>ary.splice(n,m,x);</code></li>
+<li><p>从数组的索引n开始，删除m项，把x添加到索引n前边</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var ary = [1,2,3,4,5];</span><br><span class="line">var res = ary.splice(1,2,6,7);</span><br><span class="line">console.log(ary);  // [1, 6, 7, 4, 5]</span><br><span class="line">console.log(res);  // [2，3]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>模拟push(尾部添加) 与push二者返回值不同,push返回数组的长度,splice返回被删除的项</p>
+</li>
+<li><code>arr.splice(arr.length,0,新的项)</code> 因为splice是在索引前添加,所以是arr.length</li>
+<li>模拟pop(尾部删除)</li>
+<li><code>arr.splice(arr.length-1,1)</code></li>
+<li>模拟shift(首项删除)</li>
+<li><code>arr.splice(0,1)</code></li>
+<li>模拟unshift(首项添加)和unshift二者返回值不同</li>
+<li><p>arr.splice(0,0,新的项)</p>
+</li>
+<li><p>此外</p>
+</li>
+<li>arr.splice(n) 表示从索引n开始删除和末尾</li>
+<li>arr.splice(0) 表示删除整个数组 有克隆数组的效果,利用返回值</li>
+</ul>
+<ol start="15">
+<li>slice </li>
+</ol>
+<ul>
+<li>作用:截取数组(复制数组)</li>
+<li>参数:`array.slice(start,end) 删除的时候不包括end这一项</li>
+<li>返回值:返回一个新数组</li>
+<li><p>是否改变原数组:不改变</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var ary = [1,2,3,4,5];</span><br><span class="line">var res = ary.slice(1,3);</span><br><span class="line">var res2 = ary.slice(-3,-1)</span><br><span class="line">console.log(ary);  // [1,2,3,4,5]</span><br><span class="line">console.log(res);  // [2,3]</span><br><span class="line">console.log(res2)  //[3,4] slice支持负参数，从最后一项开始算起，-1为最后一项，-2为倒数第二项</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意与splice区别,slice不改变原数组,返回值为一个新数组,splice返回值为被删除的项,返回值一个新数组</p>
+</li>
+</ul>
+<ol start="16">
+<li>sort</li>
+</ol>
+<ul>
+<li>作用:对数组元素进行排序</li>
+<li>参数:可选(函数)规定排序规则,默认排序顺序默认为字母升序</li>
+<li>返回值:排好序的原数组</li>
+<li>是否改变原数组:改变<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var ary = [1,5,7,9,12,24,56,87,92];</span><br><span class="line">var ary2 = [1,5,7,9,12,24,56,87,92];</span><br><span class="line">var ary3 = [1,5,7,9,12,24,56,87,92];</span><br><span class="line">var res = ary.sort();</span><br><span class="line">var res2 = ary2.sort(function(a,b)&#123;</span><br><span class="line">    return a-b;</span><br><span class="line">&#125;)</span><br><span class="line">var res3 = ary3.sort(function(a,b)&#123;</span><br><span class="line">    return b-a;</span><br><span class="line">&#125;)</span><br><span class="line">// sort的参数函数总的形参a,b就是数组排序时候的相邻比较的两项</span><br><span class="line">console.log(res);  // [1, 12, 24, 5, 56, 7, 87, 9, 92]</span><br><span class="line">console.log(res2); // [1, 5, 7, 9, 12, 24, 56, 87, 92]</span><br><span class="line">console.log(res3); // [92, 87, 56, 24, 12, 9, 7, 5, 1]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="17">
+<li>reverse</li>
+</ol>
+<ul>
+<li>作用:倒序数组</li>
+<li>参数:无</li>
+<li>返回值:倒序后的原数组</li>
+<li>是否改变原数组:改变</li>
+<li>注意: 返回值与原数组的值相同<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var ary = [1,2,3,4,5];</span><br><span class="line">var res = ary.reverse();</span><br><span class="line">console.log(ary);  // [5, 4, 3, 2, 1]</span><br><span class="line">console.log(res);  // [5, 4, 3, 2, 1]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>18.indexOf</p>
+<ul>
+<li>作用:查找指定元素的位置</li>
+<li>参数:array.indexOf(item,start) item:查找元素 start:字符串中开始检索的位置</li>
+<li>返回值:返回第一次查到的索引,为找到返回-1,</li>
+<li>是否改变原数组:不改变<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var ary = [1,2,3,4,5]</span><br><span class="line">var res = ary.indexOf(3);</span><br><span class="line">console.log(ary);  // [1,2,3,4,5]</span><br><span class="line">console.log(res);  // 2</span><br><span class="line">var ary = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;,&apos;c&apos;];</span><br><span class="line">var res = ary.indexOf(&apos;c&apos;,3);</span><br><span class="line">console.log(res) // 4</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript基础/" rel="tag"><i class="fa fa-tag"></i> javascript基础</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/13/前端面试题总结/" rel="next" title="前端面试题总结">
+                <i class="fa fa-chevron-left"></i> 前端面试题总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/tongren.jpg" alt="Criss Wu">
+            
+              <p class="site-author-name" itemprop="name">Criss Wu</p>
+              <div class="site-description motion-element" itemprop="description">业精于勤,荒于嬉;行成于思,毁于随.</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/a173423664" title="GitHub &rarr; https://github.com/a173423664" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:458713765@qq.com" title="E-Mail &rarr; mailto:458713765@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/yourname" title="Weibo &rarr; https://weibo.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://me.csdn.net/bufanweb" title="Google &rarr; https://me.csdn.net/bufanweb" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i>Google</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Criss Wu</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.0</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共14k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+
+ <script type="text/javascript" src="/js/love.js"></script>
