@@ -96,18 +96,17 @@
 
 
 
-  <meta name="description" content="Vue导航守卫导航守卫详解 正如其名,vue-router导航守卫主要是用来通过跳转或取消的方式守卫导航.有多种机会植入导航过程中:  全局导航守卫(beforeEach,affterEach,beforeResolve),单个路由独享的(beforeEnter),或者组件级的(beforeRouteEnter,beforeRouteUpdate,beforeRouteLeave)   全局守卫">
-<meta name="keywords" content="导航守卫">
+  <meta name="description" content="webpack知识总结webpack简介 本质上,webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler).当 webpack 处理应用程序时,它会递归地构建一个依赖关系图(dependency graph),其中包含应用程序需要的每个模块,然后将所有这些模块打包成一个或多个 bundle  webpack核心模块入口(entry)  入口起点(e">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue导航守卫">
-<meta property="og:url" content="http://yoursite.com/2019/04/26/vue导航守卫/index.html">
+<meta property="og:title" content="webpack知识总结">
+<meta property="og:url" content="http://yoursite.com/2019/04/28/webpack知识总结/index.html">
 <meta property="og:site_name" content="CrissWuBlog">
-<meta property="og:description" content="Vue导航守卫导航守卫详解 正如其名,vue-router导航守卫主要是用来通过跳转或取消的方式守卫导航.有多种机会植入导航过程中:  全局导航守卫(beforeEach,affterEach,beforeResolve),单个路由独享的(beforeEnter),或者组件级的(beforeRouteEnter,beforeRouteUpdate,beforeRouteLeave)   全局守卫">
+<meta property="og:description" content="webpack知识总结webpack简介 本质上,webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler).当 webpack 处理应用程序时,它会递归地构建一个依赖关系图(dependency graph),其中包含应用程序需要的每个模块,然后将所有这些模块打包成一个或多个 bundle  webpack核心模块入口(entry)  入口起点(e">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-26T05:26:57.625Z">
+<meta property="og:updated_time" content="2019-05-03T08:07:35.484Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue导航守卫">
-<meta name="twitter:description" content="Vue导航守卫导航守卫详解 正如其名,vue-router导航守卫主要是用来通过跳转或取消的方式守卫导航.有多种机会植入导航过程中:  全局导航守卫(beforeEach,affterEach,beforeResolve),单个路由独享的(beforeEnter),或者组件级的(beforeRouteEnter,beforeRouteUpdate,beforeRouteLeave)   全局守卫">
+<meta name="twitter:title" content="webpack知识总结">
+<meta name="twitter:description" content="webpack知识总结webpack简介 本质上,webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler).当 webpack 处理应用程序时,它会递归地构建一个依赖关系图(dependency graph),其中包含应用程序需要的每个模块,然后将所有这些模块打包成一个或多个 bundle  webpack核心模块入口(entry)  入口起点(e">
 
 
 
@@ -117,7 +116,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/04/26/vue导航守卫/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/28/webpack知识总结/">
 
 
 
@@ -127,7 +126,7 @@
   };
 </script>
 
-  <title>vue导航守卫 | CrissWuBlog</title>
+  <title>webpack知识总结 | CrissWuBlog</title>
   
 
 
@@ -347,7 +346,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/26/vue导航守卫/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/28/webpack知识总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Criss Wu">
@@ -364,7 +363,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vue导航守卫
+          <h1 class="post-title" itemprop="name headline">webpack知识总结
 
               
             
@@ -390,12 +389,24 @@
                 
               
 
-              <time title="创建时间：2019-04-26 08:54:35 / 修改时间：13:26:57" itemprop="dateCreated datePublished" datetime="2019-04-26T08:54:35+08:00">2019-04-26</time>
+              <time title="创建时间：2019-04-28 13:31:28" itemprop="dateCreated datePublished" datetime="2019-04-28T13:31:28+08:00">2019-04-28</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-03 16:07:35" itemprop="dateModified" datetime="2019-05-03T16:07:35+08:00">2019-05-03</time>
               
             
           </span>
@@ -412,7 +423,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/vue基础/" itemprop="url" rel="index"><span itemprop="name">vue基础</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Webpack/" itemprop="url" rel="index"><span itemprop="name">Webpack</span></a></span>
 
                 
                 
@@ -447,52 +458,113 @@
       
 
       
-        <h2 id="Vue导航守卫"><a href="#Vue导航守卫" class="headerlink" title="Vue导航守卫"></a>Vue导航守卫</h2><h3 id="导航守卫详解"><a href="#导航守卫详解" class="headerlink" title="导航守卫详解"></a>导航守卫详解</h3><blockquote>
-<p>正如其名,vue-router导航守卫主要是用来通过跳转或取消的方式守卫导航.有多种机会植入导航过程中:</p>
-<ul>
-<li>全局导航守卫(beforeEach,affterEach,beforeResolve),单个路由独享的(beforeEnter),或者组件级的(beforeRouteEnter,beforeRouteUpdate,beforeRouteLeave)</li>
+        <h2 id="webpack知识总结"><a href="#webpack知识总结" class="headerlink" title="webpack知识总结"></a>webpack知识总结</h2><h3 id="webpack简介"><a href="#webpack简介" class="headerlink" title="webpack简介"></a>webpack简介</h3><ul>
+<li>本质上,webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler).当 webpack 处理应用程序时,它会递归地构建一个依赖关系图(dependency graph),其中包含应用程序需要的每个模块,然后将所有这些模块打包成一个或多个 bundle</li>
 </ul>
-</blockquote>
-<h3 id="全局守卫"><a href="#全局守卫" class="headerlink" title="全局守卫"></a>全局守卫</h3><blockquote>
-<p>全局守卫,就是导航触发时的前后执行相关逻辑,可为全局前置守卫(导航发生跳转之前beforeEach),全局后置守卫(导航发生跳转之后affterEach)</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">// 全局前置导航守卫router,为v-router实例化对象</span><br><span class="line">router.beforeEach((to,from,next)=&gt;&#123; //to :去哪里 from:从哪里来,next(验证信息,回调函数一定要执行)</span><br><span class="line">console.log(to)</span><br><span class="line">console.log(from)</span><br><span class="line">if(to.name==&apos;router&apos;)&#123;//全局拦截,如果跳转到指定路由router1的话,使其不能跳转或相关逻辑</span><br><span class="line">next(false);</span><br><span class="line">return;</span><br><span class="line">&#125;else&#123;</span><br><span class="line"> next();</span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">//全局后置导航守卫</span><br><span class="line">router.afterEach((to,from)=&gt;&#123;</span><br><span class="line">    console.log(to);</span><br><span class="line">    console.log(from);</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">//路由独享的守卫</span><br><span class="line">在路由规则配置beforeEnter,当路由进入相关配置路由,会触发相关逻辑</span><br><span class="line">routes:[</span><br><span class="line">    &#123;</span><br><span class="line">        path:&apos;/&apos;,</span><br><span class="line">        name: &apos;home&apos;,</span><br><span class="line">        component:home,</span><br><span class="line">        beforeEnter:(to,form,next)=&gt;&#123;</span><br><span class="line">            console.log(to);</span><br><span class="line">            console.log(from);</span><br><span class="line">            next();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">//组件内的守卫</span><br><span class="line">就是将路由变化入口写在组件内部</span><br><span class="line"></span><br><span class="line">export default&#123;</span><br><span class="line">    name: &apos;router1&apos;,</span><br><span class="line">    data()&#123;</span><br><span class="line">        return()&#123;</span><br><span class="line">            str: &apos;hello&apos;,</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    beforeRouterEnter(to,from,next)&#123;</span><br><span class="line">        console.log(to);</span><br><span class="line">        console.log(from);</span><br><span class="line">        console.log(this) //undefined;</span><br><span class="line">        //在渲染该组件对应的路由被confirm前调用</span><br><span class="line">        //不能获取组件实例this</span><br><span class="line">        //因为当守卫执行前,组件实例还没有被创建</span><br><span class="line">        next();</span><br><span class="line">    &#125;,</span><br><span class="line">    beforeRouteUpdate(to,from,next)&#123;</span><br><span class="line">        //在当前路由改变,但是该组件被复用时调用 </span><br><span class="line">        //举个列子来说,对于一个有动态参数的路径/foo/:id  在/foo/1和/foo/2之间跳转的时候,</span><br><span class="line">        由于会渲染同样的foo组件,因此组件实例会被复用,而这个钩子就会在这种情况下被复用</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    beforeRouterLeave(to,from,next)&#123;</span><br><span class="line">        console.log(to);</span><br><span class="line">        console.log(from);</span><br><span class="line">        //导航离开该组件的对应时被调用,</span><br><span class="line">        //可以访问组件实例 &apos;this&apos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="路由元信息"><a href="#路由元信息" class="headerlink" title="路由元信息"></a>路由元信息</h3><blockquote>
-<p>定义一个路由的时候可以设置meta字段,可以存储该路由相关信息(例如:设置每个路由的title,取路由的title设置为选项卡的标题)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    path:&apos;/router2&apos;,</span><br><span class="line">    name:&apos;router2&apos;,</span><br><span class="line">    component: &apos;router2&apos;,</span><br><span class="line">    meta:&#123;</span><br><span class="line">        title:&apos;router2&apos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 全局前置守卫</span><br><span class="line">router.beforeEach((to,from,next)=&gt;&#123;</span><br><span class="line">    console.log(to);</span><br><span class="line">    console.log(from);</span><br><span class="line">    if(to.meta.title)&#123;</span><br><span class="line">        document.title = to.meta.title;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        document.title= &apos;我是默认的title&apos;</span><br><span class="line">    &#125;</span><br><span class="line">    next();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-</blockquote>
+<h3 id="webpack核心模块"><a href="#webpack核心模块" class="headerlink" title="webpack核心模块"></a>webpack核心模块</h3><p><strong>入口(entry)</strong></p>
 <ul>
-<li>总结: </li>
-<li>每个守卫接收三个参数</li>
-<li>to:Route即将要进入的目标路由对象</li>
-<li>from:Route当前导航正要离开的路由</li>
-<li>next:function;一定要调用这个方法来resolve,执行效果依赖next方法的调用参数.<ul>
-<li>next():进行管道中的下一个钩子.如果全部钩子执行完了,则导航状态就是comfirmed(确认的)</li>
-<li>next(false):中断当前导航.如果浏览器的URL改变了(可能是用户手动或者浏览器后退按钮),那么URL地址会重置到from路由对应的地址</li>
-<li>next(‘/‘)或者next({path:’/‘}); 跳转到一个不同的地址,当前的导航被中断,然后进行一个新的导航.你可以向next传递任意位置对象,且允许设置诸如:replace:true, name:’home’,之类的选项,以及任何用在router-link的to,prop或router.push中的选项</li>
+<li>入口起点(entry ponit)指示 webpack应该使用哪个模块,来构建其内部依赖图的开始,进入入口起点后,webpack会找出哪些模块和库是入口起点(直接和间接)依赖的,每个依赖项随即被处理,最后输出到称之为bundles的文件中</li>
+<li>可以在webpack配置中配置entry</li>
 </ul>
+<p><strong>多入口文件配置</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">entry:&#123;</span><br><span class="line">    app:&apos;./src/index.js&apos;</span><br><span class="line">    print:&apos;./src/pring.js&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>输出(output)</strong></p>
+<ul>
+<li>用于配置输出的打包目录和文件</li>
+</ul>
+<p><strong>多文件输出</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">output:&#123;</span><br><span class="line">    filename:&apos;[name].bundle.js&apos;  //多文件输出 结果是app.bundle.js/print:&apos;./src/pring.js&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>loader</strong></p>
+<ul>
+<li>用于解析.css .sass .vue .xxx等类型文件</li>
+</ul>
+<p><strong>插件(plugins)</strong></p>
+<pre><code>- HtmlWebpackPlugin 自动生成html模板
+</code></pre><h3 id="webpack执行步骤"><a href="#webpack执行步骤" class="headerlink" title="webpack执行步骤"></a>webpack执行步骤</h3><ul>
+<li>考虑到通过cli这种方式运行本地的webpack不是特别方便,我们可以设置一个快捷方式,在package.json中添加一个npm脚本(npm script)</li>
+<li>然后我们就可以npm run build 来自动帮我们自动执行webpack命令,并帮我们自动解析webpack_config文件,自动将入口设置目录下的文件设置为入口文件,并将它打包成bundle文件,输出到dist(输出层)</li>
+</ul>
+<h3 id="管理资源"><a href="#管理资源" class="headerlink" title="管理资源"></a>管理资源</h3><p><strong>加载CSS</strong></p>
+<ul>
+<li>需要在index.js文件中引入相关的css文件</li>
+<li>注意:为了在js文件中import一个CSS文件,你需要在module配置中安装并添加style-loader和css-loader</li>
+</ul>
+<p><strong>加载图片</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. npm install --save-dev file-loader</span><br><span class="line">   &#123;</span><br><span class="line">     test: /\.(png|svg|jpg|gif)$/, .匹配除换行符 \n 之外的任何单字符。要匹配 .,请使用 \. </span><br><span class="line">    use: [</span><br><span class="line">       &apos;file-loader&apos;</span><br><span class="line">     ]</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="管理输出"><a href="#管理输出" class="headerlink" title="管理输出"></a>管理输出</h3><ol>
+<li>插件HtmlWebpackPlugin</li>
+</ol>
+<p><strong>应用场景以及作用</strong></p>
+<ul>
+<li>当我们更改了一个入口起点名字时,生成的包将被重命名在一个构建中,但是我们的html文件中仍然会引用旧的名字</li>
+<li>虽然我们文件夹中已经有了index.html文件,但是HtmlWebpackPlugin还是会默认生成index.html文件,就是说它会生成新的index.html文件替换原来的</li>
+</ul>
+<ol start="2">
+<li>clean-webpack-plugin</li>
+</ol>
+<p><strong>应用场景以及作用</strong></p>
+<ul>
+<li>当没有它时,过去的指南和代码示例全部会遗留在文件夹中,会导致我们的/dist文件相当错乱,webpack每次构建都会将这些文件生成在.dist文件夹中,但是它无法判断到底哪些文件是实际在项目中用到的</li>
+<li>它的作用就是在每次构建文件前,清理.dist文件夹,只会生成当前用到文件,可以减少代码冗余,精简代码</li>
+</ul>
+<h3 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h3><h4 id="1-source-map"><a href="#1-source-map" class="headerlink" title="1.source map"></a>1.source map</h4><p><strong>应用场景以及作用</strong></p>
+<ul>
+<li><p>webpack打包源代码时,会很难追踪到错误和警告在源代码中的原始位置,错误显示只会显示在已经打包的bundle文件中,如果有多个文件打包入bundle文件中,将很难查询到错误在源代码中的具体位置</p>
+</li>
+<li><p>它的作用就是帮助我们更容易的追踪错误和警告,将编译后的代码映射回原始源代码中</p>
+</li>
+<li>因此我们需要使用到devtool,并且我们推荐在开发环境中使用eval-source-map(因为在开发环境中,我们需要快速定位报错信息,方便我们的修改)</li>
+<li>在生产环境中使用cheap-module-source-map(它可以帮我们压缩代码,减小代码占用的内存空间)</li>
+</ul>
+<h4 id="2-webpack-dev-server"><a href="#2-webpack-dev-server" class="headerlink" title="2.webpack-dev-server"></a>2.webpack-dev-server</h4><p><strong>应用场景</strong></p>
+<ul>
+<li>通常情况下,我们都希望我们修改的代码能够自动编译到出口文件中.而省去每次都需要使用npm run build.</li>
+</ul>
+<p><strong>作用</strong></p>
+<ul>
+<li>为你提供了一个简单的web服务器,并且能够实时重新加载(live reloding)</li>
+<li>config中需要配置一下devServer属性<code>contentBase:&#39;./dist&#39;</code>,是说明在哪个目录下启动服务</li>
+<li>同时在package.json中,需要加上<code>start:&#39;webpack-dev-server --open&#39;</code></li>
+<li>注意:自动服务时,run可以默认不写</li>
+</ul>
+<h3 id="热替换模块-Hot-Module-Replacement"><a href="#热替换模块-Hot-Module-Replacement" class="headerlink" title="热替换模块(Hot Module Replacement)"></a>热替换模块(Hot Module Replacement)</h3><p><strong>应用场景</strong></p>
+<ul>
+<li>当我们更新文件中,我们总希望构建可以局部更新,而避免完全刷新</li>
+</ul>
+<p><strong>作用</strong></p>
+<ul>
+<li>它允许在运行时更新各种模块,而无需<strong>完全</strong>刷新.这样能更加高效的刷新页面.</li>
+<li>首先我们需要在config文件中,引入webpack模块,同时在devServer中加入hot:true,注意:中文文档引入有问题,需参照英文文档</li>
+</ul>
+<h3 id="tree-shaking"><a href="#tree-shaking" class="headerlink" title="tree shaking"></a>tree shaking</h3><ul>
+<li>通常用于描述移除JavaScript上下文中的未引用代码</li>
+<li>webpack4更新了这个功能,package.json 的 “sideEffects” 属性作为标记</li>
+</ul>
+<h3 id="生产环境构建"><a href="#生产环境构建" class="headerlink" title="生产环境构建"></a>生产环境构建</h3><ul>
+<li>在生产环境中,我们更倾向于关注更小的bundle,更轻量的source map,以及更优化的资源,以改善加载时间,由于要遵循逻辑分离,我们通常建议为每个环境写一个彼此独立的webpack配置 </li>
+<li>首先我们需要安装webpack-merge (帮我合并webpack代码)</li>
+<li>这就要求我们配置三个webpack配置环境分别是common(共同的环境)product(开发环境)dev(生产环境)</li>
+<li><p>common环境中一般保存有入口文件,输出文件,插件有清除目标,清除目标目录的插件,和一个自动生成html文件的插件</p>
+</li>
+<li><p>开发环境中,一般保存有共同的环境,和报错信息(devetol),实时预览(devServer)</p>
+</li>
+<li><p>生产环境中,一般保存有压缩输出.不需要报错信息和实时预览的功能,但是在4中已经变成了默认配置</p>
 </li>
 </ul>
-<h3 id="vue-router路由元信息meta"><a href="#vue-router路由元信息meta" class="headerlink" title="vue-router路由元信息meta"></a>vue-router路由元信息meta</h3><ul>
-<li>当产生判断当前路由是否允许登录,是否需要身份验证,权限认证等,虽然可以采用路由匹配的方式if(to.path==’/url’),很显然当需要验证的路由较多时,会增加太多的if判断,这不利于代码的维护,此时可在定义路由的时候可以配置meta字段,通过设置一些属性值,可以便于我们对当前路由做一些处理,也可以使用next()重定到其他路由</li>
-<li>使用,在定义路由时,定义一个需要验证的meta信息:meta{requiresAuth:true}</li>
-<li>meta字段就是路由元信息字段,requireAuth时自己起的字段名字,用来标记这个路由信息是否需要检测,true表示要检测.</li>
-<li>注意:路由是可以嵌套的,因此,当一个路由匹配成功后,他可能匹配多个路由记录,例如,根据下面的路由配置,/foo/bar这个URL将会匹配到父路由的记录,以及子路由记录</li>
+<h3 id="代码分离"><a href="#代码分离" class="headerlink" title="代码分离"></a>代码分离</h3><p><strong>防止重复</strong></p>
+<ul>
+<li>CommonsChunkPlugin 插件可以将公众的依赖模块提取到已有的入口chunk中,或者提取到新生成的chunk中.</li>
+<li>注意:在web4中使用<code>optimization:{splitChunks:all}</code>, CommonsChunkPlugin已经被弃用.</li>
+<li>注意:使用   </li>
 </ul>
-<ol>
-<li>路由器中routes配置中的每个路由对象为路由记录</li>
-<li>路由记录可以嵌套,所以当一个路由匹配成功后,可能同时需要匹配多个路由记录</li>
-<li>商品:/product</li>
-<li>商品列表:/product/productList</li>
-<li>商品详情:/product/productList/detail/:id</li>
-<li>当匹配到商品详情的时候,同时也会匹配到商品和商品列表</li>
-<li>$route对象中的$route.matched数组记录路由匹配到的所有路由记录</li>
-<li>因此可以通过遍历$route.matched数组检查路由记录中的meta字段</li>
+<h3 id="webpack的划片有什么作用"><a href="#webpack的划片有什么作用" class="headerlink" title="webpack的划片有什么作用?"></a>webpack的划片有什么作用?</h3><ol>
+<li>防止bundle文件过大</li>
+<li>按需加载,只加载利用的js文件</li>
+<li>提取公共模块,避免代码重复</li>
 </ol>
-<h3 id="路由元信息的应用"><a href="#路由元信息的应用" class="headerlink" title="路由元信息的应用"></a>路由元信息的应用</h3><p><strong>需求</strong></p>
-<ol>
-<li>通过上面的分析可以做出一个需求,当导航切换时</li>
-<li>如果页面需要授权才能访问,判断是否授权,若未授权跳转至登录页面</li>
-</ol>
+<p><strong>缓存</strong></p>
+<ul>
+<li>浏览器是有缓存的,第一次打开很慢,第二次打开的时候因为上一次打开浏览器的有些文件已经被浏览器缓存了,当路径相同时,浏览器不会重新加载文件,而是会复用.这样的话,如果我们只修改图片的内容,但是图片的路径和图片名称不变,浏览器会默认请求已经缓存的图片,这样就会导致我们明明更新了代码但是页面图片并不会更新</li>
+<li>webpack可以避免这种缓存带来的问题</li>
+<li>我们需要在导出的时候<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">output:&#123;</span><br><span class="line">    filename:&apos;[name].[contenthash].js&apos; //[contenthash]只要内容发生了变化,就会生成一个新的hash值</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
 
       
     </div>
@@ -514,12 +586,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/导航守卫/" rel="tag"><i class="fa fa-tag"></i> 导航守卫</a>
-          
-        </div>
-      
 
       
       
@@ -529,8 +595,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/21/前端面试总结之JS篇/" rel="next" title="前端面试总结之JS篇">
-                <i class="fa fa-chevron-left"></i> 前端面试总结之JS篇
+              <a href="/2019/04/26/vuex知识总结/" rel="next" title="Vuex知识总结">
+                <i class="fa fa-chevron-left"></i> Vuex知识总结
               </a>
             
           </div>
@@ -539,8 +605,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/26/vuex知识总结/" rel="prev" title="Vuex知识总结">
-                Vuex知识总结 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/05/03/前端面试之前端综合问题/" rel="prev" title="前端面试之前端综合问题">
+                前端面试之前端综合问题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -800,7 +866,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue导航守卫"><span class="nav-number">1.</span> <span class="nav-text">Vue导航守卫</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#导航守卫详解"><span class="nav-number">1.1.</span> <span class="nav-text">导航守卫详解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局守卫"><span class="nav-number">1.2.</span> <span class="nav-text">全局守卫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由元信息"><span class="nav-number">1.3.</span> <span class="nav-text">路由元信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vue-router路由元信息meta"><span class="nav-number">1.4.</span> <span class="nav-text">vue-router路由元信息meta</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由元信息的应用"><span class="nav-number">1.5.</span> <span class="nav-text">路由元信息的应用</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack知识总结"><span class="nav-number">1.</span> <span class="nav-text">webpack知识总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#webpack简介"><span class="nav-number">1.1.</span> <span class="nav-text">webpack简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#webpack核心模块"><span class="nav-number">1.2.</span> <span class="nav-text">webpack核心模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#webpack执行步骤"><span class="nav-number">1.3.</span> <span class="nav-text">webpack执行步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#管理资源"><span class="nav-number">1.4.</span> <span class="nav-text">管理资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#管理输出"><span class="nav-number">1.5.</span> <span class="nav-text">管理输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开发"><span class="nav-number">1.6.</span> <span class="nav-text">开发</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-source-map"><span class="nav-number">1.6.1.</span> <span class="nav-text">1.source map</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-webpack-dev-server"><span class="nav-number">1.6.2.</span> <span class="nav-text">2.webpack-dev-server</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#热替换模块-Hot-Module-Replacement"><span class="nav-number">1.7.</span> <span class="nav-text">热替换模块(Hot Module Replacement)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tree-shaking"><span class="nav-number">1.8.</span> <span class="nav-text">tree shaking</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生产环境构建"><span class="nav-number">1.9.</span> <span class="nav-text">生产环境构建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码分离"><span class="nav-number">1.10.</span> <span class="nav-text">代码分离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#webpack的划片有什么作用"><span class="nav-number">1.11.</span> <span class="nav-text">webpack的划片有什么作用?</span></a></li></ol></li></ol></div>
             
 
           </div>

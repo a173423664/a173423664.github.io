@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Vuex知识总结Vuex基本概念 Vuex是一个专门为vue.js应用程序开发的状态管理模式,它集中式存储管理应用的所有组件的状态,并以相应的规则保证状态以一种可预测的方式发生变化.  最简单的store 每一个Vuex应用的核心就是store(仓库),’store’基本上就是一个容器,他包含这你应用中的大部分的状态(state).Vuex的单纯的全局对象有以下两点不同?   Vuex的状态存储是">
+<meta name="keywords" content="Vue.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vuex知识总结">
+<meta property="og:url" content="http://yoursite.com/2019/04/26/vuex知识总结/index.html">
+<meta property="og:site_name" content="CrissWuBlog">
+<meta property="og:description" content="Vuex知识总结Vuex基本概念 Vuex是一个专门为vue.js应用程序开发的状态管理模式,它集中式存储管理应用的所有组件的状态,并以相应的规则保证状态以一种可预测的方式发生变化.  最简单的store 每一个Vuex应用的核心就是store(仓库),’store’基本上就是一个容器,他包含这你应用中的大部分的状态(state).Vuex的单纯的全局对象有以下两点不同?   Vuex的状态存储是">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-28T06:08:09.087Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vuex知识总结">
+<meta name="twitter:description" content="Vuex知识总结Vuex基本概念 Vuex是一个专门为vue.js应用程序开发的状态管理模式,它集中式存储管理应用的所有组件的状态,并以相应的规则保证状态以一种可预测的方式发生变化.  最简单的store 每一个Vuex应用的核心就是store(仓库),’store’基本上就是一个容器,他包含这你应用中的大部分的状态(state).Vuex的单纯的全局对象有以下两点不同?   Vuex的状态存储是">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="CrissWuBlog" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/04/26/vuex知识总结/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Vuex知识总结 | CrissWuBlog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CrissWuBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">成為一個厲害得普通人</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/26/vuex知识总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Criss Wu">
+      <meta itemprop="description" content="业精于勤,荒于嬉;行成于思,毁于随.">
+      <meta itemprop="image" content="/images/tongren.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CrissWuBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Vuex知识总结
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-26 20:06:37" itemprop="dateCreated datePublished" datetime="2019-04-26T20:06:37+08:00">2019-04-26</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-28 14:08:09" itemprop="dateModified" datetime="2019-04-28T14:08:09+08:00">2019-04-28</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Vuex/" itemprop="url" rel="index"><span itemprop="name">Vuex</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Vuex知识总结"><a href="#Vuex知识总结" class="headerlink" title="Vuex知识总结"></a>Vuex知识总结</h2><h3 id="Vuex基本概念"><a href="#Vuex基本概念" class="headerlink" title="Vuex基本概念"></a>Vuex基本概念</h3><ul>
+<li>Vuex是一个专门为vue.js应用程序开发的状态管理模式,它集中式存储管理应用的所有组件的状态,并以相应的规则保证状态以一种可预测的方式发生变化.</li>
+</ul>
+<h3 id="最简单的store"><a href="#最简单的store" class="headerlink" title="最简单的store"></a>最简单的store</h3><ul>
+<li>每一个Vuex应用的核心就是store(仓库),’store’基本上就是一个容器,他包含这你应用中的大部分的状态(state).Vuex的单纯的全局对象有以下两点不同?</li>
+</ul>
+<ol>
+<li>Vuex的状态存储是响应式的.当Vue组件从store中读取状态的时候,若store中的状态发生变化,那么相应的组件也会相应的得到高效更新</li>
+<li>你不能直接改变store中的状态,改变store中的状态的唯一途径就是显存地提交(commit)mutation.这样使得我们可以方便地跟踪每一个状态的变化,从而让我们能够实现一些工具帮助我们更好地了解我们应用</li>
+</ol>
+<h3 id="Vuex的基本脚手架"><a href="#Vuex的基本脚手架" class="headerlink" title="Vuex的基本脚手架"></a>Vuex的基本脚手架</h3><p><strong>State</strong> </p>
+<ul>
+<li>用于保存需要共享的数据,不可直接修改</li>
+<li>Vuex使用单一状态树,用一个对象就包含了全部的应用层级状态,至此它便作为’唯一数据源SSTO’,这也意味着,每个应用将仅仅包含一个store实例对象,单一状态数让我们能够直接地定位任意特定的状态片段,在调试的时候,也能轻易地取得整个当前应用的状态快照</li>
+<li>官方文档这句话说的就是,一个Vuex只能包含一个store(存储数据的库),这样你在访问数据的时候好找些,store的其中一个配置就是state,和这个state,我们可以把它比作是vue实例的data选项,就是可以把数据放在里面.</li>
+<li>获取数据可以使用<code>$this.store.state.xxx</code></li>
+</ul>
+<p><strong>Mutations</strong> </p>
+<ul>
+<li>更改Vuex中的store中状态的唯一方法就是提交mutation.</li>
+<li>输入格式:$store.commit(‘xx’,n)</li>
+<li>接收的第一个参数为state,对面参数可以接收值,也可以接收对象 </li>
+<li>在组件里可以调用mutations中的方法,进而修改states中的值</li>
+<li>注意:Mutation中的方法必须是同步函数 </li>
+<li>注意:组件内部如果想要修改state中的属性,必须要发送一个commit请求,调用mutations中的方法</li>
+</ul>
+<p><strong>提交荷载(Payload)</strong></p>
+<ul>
+<li>你可以向store.commit传入额外的参数,即mutation的荷载(payload)</li>
+<li>在Vuex中,mutation都是同步事务</li>
+</ul>
+<p><strong>Actions</strong> </p>
+<ul>
+<li>用于异步请求数据并调用mutations进而修改state</li>
+<li>输入格式: $store.dispatch(xx,{n:xxx})</li>
+<li>action类似于mutation,不同在于action提交的是mutation,而不是直接变更状态,action可以包含任意异步操作</li>
+<li>action函数接收一个与store实例具有相同方法和属性的context对象,因此你可以调用context.commit提交一个mutation,或者通过context.state和context.getters来获取state和getters.当我们在之后介绍到Modules时,你就知道context对象为什么不是store实例本身. </li>
+<li>actions方法里面传入一个上下文对象context,通过这个上下文对象来调用commit,执行mutations里面的方法.</li>
+<li>注意:在组件里调用action里面的方法,使用的是dispatch</li>
+<li>注意:actions虽然同样支持荷载模式和对象方式进行分发,但是第二个参数必须使用对象类型(也就是说在action中传递载荷的方式只能是对象类型)</li>
+</ul>
+<p><strong>getters</strong> </p>
+<ul>
+<li>当前Vuex的state对象中的属性的计算属性 </li>
+<li>从字面上意思就可以看出,他是用来取数据,得到数据的</li>
+<li>虽然我们可以使用state直接获取数据,但是经常会出现一些情况是对拿到的数据做一些处理,例如格式化,过滤数据,这时候就会用到getter</li>
+<li>依赖于state对象中的属性,</li>
+<li>输入格式:this.$store.getters.xxxx</li>
+</ul>
+<p><strong>Action</strong></p>
+<ul>
+<li>Action类似于mutation,不同在于:<ul>
+<li>Action提交的是mutation,而不是直接变更状态</li>
+<li>Action可以包含任意异步操作</li>
+</ul>
+</li>
+<li>也就是说Action执行的还是Muation,只不过他可以异步执行,差不多就是给Muation外边包一层函数</li>
+<li>我们前面已经了解了mutation中的数据必须同步执行,但是Action就不受约束,我们可以在aciton内部执行异步操作</li>
+<li>另外通过this.$store.dispatch(‘xxx’)即可调用</li>
+</ul>
+<p><strong>Module</strong></p>
+<ul>
+<li>由于使用单一状态数,应用的所有状态会集中到一个比较大的对象,当应用变得非常复杂的时候,store对象就有可能变得相当臃肿.为了解决</li>
+</ul>
+<h3 id="Vuex的项目结构"><a href="#Vuex的项目结构" class="headerlink" title="Vuex的项目结构"></a>Vuex的项目结构</h3><blockquote>
+<p>对于大型应用,我们希望把Vuex相关代码分割到代码块中,下面是项目结构示例;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">store</span><br><span class="line">    - index.js //我们组装模块并导出store的地方</span><br><span class="line">    - actions // 根级别的actions</span><br><span class="line">    - mutations //根据别的mutation</span><br><span class="line">    - modules</span><br><span class="line">        - cart.js //购物车组件</span><br><span class="line">        - product.js 产品模块</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="分模块发送commit"><a href="#分模块发送commit" class="headerlink" title="分模块发送commit"></a>分模块发送commit</h3><ul>
+<li>在分模块下发送commit调用mutaions中的方法,必须使用commit(‘cart/insCount); 通过模块名加上方法来修饰来发送这个mutaions,从而调用mutation中的方法.</li>
+<li>注意: 前提是必须加上命名空间,否则会报错,给每个需要调用commit方法的模块,加上命名空间(name),</li>
+</ul>
+<h3 id="跨模块获取信息"><a href="#跨模块获取信息" class="headerlink" title="跨模块获取信息"></a>跨模块获取信息</h3><ul>
+<li>buyListInfo(state,getters,rootStates,rootGetters)</li>
+<li>遍历并修改每一个元素,并用每一个元素的id从跨模块的对象中获取明细?</li>
+</ul>
+<p><strong>难点:如何比配?</strong>  </p>
+<ul>
+<li>rootStates根节点,</li>
+<li>map()通过使用map遍历方法修改每一个元素,并用每一个元素的id从product里获取明细</li>
+<li>通过rootStates根节点找到product.all中所有元素节点,并调用find方法找出id相同的一项</li>
+<li>然后把item和product合并为一个对象 Object.assign({},product,item) item会覆盖product相同的属性</li>
+<li>注意:这里需要将item放在后面,这样才可以将product中相同的属性(如商品的数量, item为购买的数量,product为库存的数量)</li>
+</ul>
+<h3 id="调用其他模块的mutaions"><a href="#调用其他模块的mutaions" class="headerlink" title="调用其他模块的mutaions"></a>调用其他模块的mutaions</h3><p><strong>业务需求:</strong></p>
+<ul>
+<li>通过在actions定义一个异步请求(可以同时调用两个模块的mutations),可以调用自己的mutations方法,并且还可以调用其他模块的mutations方法</li>
+</ul>
+<p><strong>注意几个点</strong></p>
+<ul>
+<li>content可以解构为{state,commit…. }</li>
+<li>action中更新库存,方便调用其他模块的mutations({dispatch,commit,getters,rootGetters},obj){</li>
+<li>commit(‘其他模块’/mutation方法),obj.id,{root:true} } 也就是说调用cart/addTocart 传递obj.id的负载对象 调用的是根节点的方法,在调用其他模块中的mutations时,可以传入一个对象,也就是context可以解构成dispatch,commit,getters,rootGetters,还需要传入一个id</li>
+</ul>
+<h3 id="购物车难点解析"><a href="#购物车难点解析" class="headerlink" title="购物车难点解析"></a>购物车难点解析</h3><p><strong>业务需要一:如何将api中的数据获取并存入到哪里,可以实现多个模块共享</strong> </p>
+<ul>
+<li>通过actions异步请求数据,并将请求到的数据通过调用mutations中的方法存入到state中,记住:必须将数据放在store中,因为只有放入store中才能实现商品列表和购物车数据实现双向通信</li>
+<li>注意:actions异步操作需要传入一个context上下文对象,通过commit调用mutation方法,传入获取到的数据,最后存入state中.</li>
+</ul>
+<p><strong>业务需求二:如何在组件中调用模块中的方法,从而将模块中请求到数据呈现在视图层</strong></p>
+<ol>
+<li>因为模块中通过异步请求获取数据,所有我们在组件中需要通过dispatch来调用模块中异步请求数据的方法,来获取数据,异步请求数据调用mutations中的方法,最后将数据存入到store中,</li>
+<li>注意:因为我们希望在页面刷新时就获取到数据,所以我们需要将方法初始化时调用</li>
+<li>最后,官方也建议我们通过计算属性的时候获取到模块中state中的数据</li>
+</ol>
+<p><strong>业务需求三:如何在购物车中添加对应的商品id和数量</strong></p>
+<ul>
+<li>在商品列表中点击按钮,商品库存减一,并且将商品的id和数量添加到购物车中,需要在购物车中添加到购物车的方法()</li>
+<li>思路: 在点击商品列表对应的按钮时,需要调用购物车添加的方法,并且需要将对应的id传递过去</li>
+</ul>
+<ol>
+<li>购物车中需要添加方法,state中首先创建一个数组,用来保存对应的id和数量的.</li>
+<li>product中调用购物车模块中mutation的方法,利用find()方法,判断购物车中存不存在当前id,如果存在count+1,如果不存在,将id和count=1push到数组中.<br><strong>同时商品列表库存需要减少</strong></li>
+</ol>
+<ul>
+<li>同样可以使用find()方法,判断当点击的这个id等于当前id的时候,就将对应商品库存减少</li>
+</ul>
+<p><strong>业务需要四:购物车按钮还应该有一个点击按钮点击以后购物车对应的商品数量减一,当数量小于等于1的时候,这个商品将会被删除</strong></p>
+<ol>
+<li>首先应该理解,购物车中商品的id来自于商品详情中传入的id,也就是在添加购物车对应的商品的时候传入的商品id,</li>
+<li>购物车逻辑,当商品大于1时count–,否则移除商品,可以使用for循环遍历,存在购物车中的商品id,当点击商品对应的id等于商品列表中的某一个id是,获取当前商品的下标.</li>
+<li>如果存在这个下标,如果这个下标大于1,则商品数量–</li>
+<li>否则将在购物车中移除这个商品</li>
+</ol>
+<p><strong>业务逻辑五:我们需要知道买的是什么商品,光知道商品id来不够,通常我们还需要知道商品的明细,但是将所有属性扔给购物车又不合理</strong></p>
+<ul>
+<li>我们可以使用getters用来跨模块获取信息</li>
+<li>通过getters 中的rootState就可以获取到product中的元素,遍历并修改每一个元素,并用每一个元素的id从product里获取明细,</li>
+<li>我们需要用到getters中的state和rootState属性.rootState是根节点<br><strong>难点一</strong></li>
+<li>使用map()方法可以遍历每一个元素,并修改</li>
+<li>find()返回第一个于条件匹配的元素</li>
+<li>我们可以使用map()方法遍历购物车中的数据,并配合find方法在商品详情中寻找id相同的数据(如何获取product上面已经说明了);</li>
+<li>找到相同的id的数据,这时我们可以将商品详情和购物车合并;注意:我们需要将合并的商品详情放在前面,购物情况放在后面合并,</li>
+<li>在购物车组件中调用这个getters方法 注意:调用getters方法需要使用[]形式,因为存在命名空间,需要哪个模块下的哪个方法</li>
+<li>最后返回的是合并后的结果</li>
+</ul>
+<p><strong>业务逻辑六:更新库存</strong></p>
+<ul>
+<li>更新库存,如果想调用其他模块的mutations,例如这里就需要调用购物车中的cartToAdd</li>
+<li>注意:在actions中传递的第二个参数,必须是对象类型的值,在action中调用commit,并且把obj传递过去,负载对象调用的是根节点的方法</li>
+<li>调用别的模块commit 需要{root:true},同时还修改自己.调用自己的commit.</li>
+<li>注意:在商品列表组件中分别调用两个模块的方法,可以使用anctions中的异步请求.</li>
+<li>调用别的模块的方法 需要传递{root:true}</li>
+</ul>
+<p><strong>业务逻辑七:还原商品列表的库存</strong> </p>
+<ul>
+<li>就需要在购物车中调用商品详情中的方法,actions同时将购物车中获取到对应id的商品添加到商品详情中 跨模块调用方法传递</li>
+<li>在product中设置一个还原库存的方法,遍历添加进购物车中的商品,并且遍历商品详情的id,当两个id相同时,将购物车中的数量加入对应商品列表的count,然后返回当前商品列表的对象</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Vue-js/" rel="tag"><i class="fa fa-tag"></i> Vue.js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/26/vue导航守卫/" rel="next" title="vue导航守卫">
+                <i class="fa fa-chevron-left"></i> vue导航守卫
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/28/webpack知识总结/" rel="prev" title="webpack知识总结">
+                webpack知识总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/tongren.jpg" alt="Criss Wu">
+            
+              <p class="site-author-name" itemprop="name">Criss Wu</p>
+              <div class="site-description motion-element" itemprop="description">业精于勤,荒于嬉;行成于思,毁于随.</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/a173423664" title="GitHub &rarr; https://github.com/a173423664" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:458713765@qq.com" title="E-Mail &rarr; mailto:458713765@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/yourname" title="Weibo &rarr; https://weibo.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://me.csdn.net/bufanweb" title="Google &rarr; https://me.csdn.net/bufanweb" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i>Google</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vuex知识总结"><span class="nav-number">1.</span> <span class="nav-text">Vuex知识总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Vuex基本概念"><span class="nav-number">1.1.</span> <span class="nav-text">Vuex基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最简单的store"><span class="nav-number">1.2.</span> <span class="nav-text">最简单的store</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vuex的基本脚手架"><span class="nav-number">1.3.</span> <span class="nav-text">Vuex的基本脚手架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vuex的项目结构"><span class="nav-number">1.4.</span> <span class="nav-text">Vuex的项目结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分模块发送commit"><span class="nav-number">1.5.</span> <span class="nav-text">分模块发送commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跨模块获取信息"><span class="nav-number">1.6.</span> <span class="nav-text">跨模块获取信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调用其他模块的mutaions"><span class="nav-number">1.7.</span> <span class="nav-text">调用其他模块的mutaions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#购物车难点解析"><span class="nav-number">1.8.</span> <span class="nav-text">购物车难点解析</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Criss Wu</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.0</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共33.8k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+
+ <script type="text/javascript" src="/js/love.js"></script>
