@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="CrissWuBlog">
 <meta property="og:description" content="javascript执行上下文理解 可以理解当前代码的运行环境,代码的运行环境分为三种:  全局级别的代码 函数级别的代码 Eval的代码 -在Eval函数函数体内运行的代码    注意一点: 作用域在函数定义完的时候就已经创建了,而不是在函数调用的时候,这点特点重要 然后按照程序执行的顺序,一步步把各个上下文环境加上   第一步首先在加载程序的时候,就已经确定了全局的上下文环境,并随着程序的的执">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-15T13:08:22.639Z">
+<meta property="og:updated_time" content="2019-05-05T00:29:01.634Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js执行上下文理解">
 <meta name="twitter:description" content="javascript执行上下文理解 可以理解当前代码的运行环境,代码的运行环境分为三种:  全局级别的代码 函数级别的代码 Eval的代码 -在Eval函数函数体内运行的代码    注意一点: 作用域在函数定义完的时候就已经创建了,而不是在函数调用的时候,这点特点重要 然后按照程序执行的顺序,一步步把各个上下文环境加上   第一步首先在加载程序的时候,就已经确定了全局的上下文环境,并随着程序的的执">
@@ -390,12 +390,24 @@
                 
               
 
-              <time title="创建时间：2019-04-15 20:42:04 / 修改时间：21:08:22" itemprop="dateCreated datePublished" datetime="2019-04-15T20:42:04+08:00">2019-04-15</time>
+              <time title="创建时间：2019-04-15 20:42:04" itemprop="dateCreated datePublished" datetime="2019-04-15T20:42:04+08:00">2019-04-15</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-05 08:29:01" itemprop="dateModified" datetime="2019-05-05T08:29:01+08:00">2019-05-05</time>
               
             
           </span>
@@ -462,7 +474,7 @@
 <ol>
 <li>第一步首先在加载程序的时候,就已经确定了全局的上下文环境,并随着程序的的执行改变对变量的赋值</li>
 <li>函数的执行上下文是在调用函数后建立的,执行上下文的第一个阶段时在函数调用后,在代码执行之前的进行,执行上下文的第二个阶段时在具体代码执行的时候进行</li>
-<li>作用域只是一个’区域’,一个抽象的概念,其中没有变量的,要通过作用域对应的执行上下环境来获取响应的变量,同一个作用域下,不同的调用会产生不同的的执行上下文环境,继而产生不同的变量</li>
+<li>作用域只是一个’区域’,一个抽象的概念,其中没有变量的,要通过作用域对应的执行上下环境来获取相应的变量,同一个作用域下,不同的调用会产生不同的的执行上下文环境,继而产生不同的变量</li>
 <li>所以,如果要一个作用域下某个变量的值,就需要找到这个作用域对应的执行上下文环境,在其中变量的值.</li>
 </ol>
 <h3 id="执行上下文栈的理解"><a href="#执行上下文栈的理解" class="headerlink" title="执行上下文栈的理解"></a>执行上下文栈的理解</h3><ul>
@@ -869,7 +881,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共33.8k字</span>
+  <span class="post-count">博客全站共41.2k字</span>
 </div>
 
         
