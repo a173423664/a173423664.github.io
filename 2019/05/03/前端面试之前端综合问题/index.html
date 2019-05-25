@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="CrissWuBlog">
 <meta property="og:description" content="前端面试问题前端页面有哪三层构成,分别是什么?起什么样的作用?1. 结构层html  由html或者XHTML之类的标记语言创建,即:’标签’  2.样式层css  解决结构层,如何显示的问题  3.行为层javascript  内容如何对事件做出反应一类的问题解决  常见的浏览器内核有哪些? trident内核:IE, 360,搜狗浏览器,又称[MSHTML] Gecko内核: Netscape">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-04T14:33:44.252Z">
+<meta property="og:updated_time" content="2019-05-24T17:10:58.447Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端面试之前端综合问题">
 <meta name="twitter:description" content="前端面试问题前端页面有哪三层构成,分别是什么?起什么样的作用?1. 结构层html  由html或者XHTML之类的标记语言创建,即:’标签’  2.样式层css  解决结构层,如何显示的问题  3.行为层javascript  内容如何对事件做出反应一类的问题解决  常见的浏览器内核有哪些? trident内核:IE, 360,搜狗浏览器,又称[MSHTML] Gecko内核: Netscape">
@@ -406,7 +406,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-04 22:33:44" itemprop="dateModified" datetime="2019-05-04T22:33:44+08:00">2019-05-04</time>
+                <time title="修改时间：2019-05-25 01:10:58" itemprop="dateModified" datetime="2019-05-25T01:10:58+08:00">2019-05-25</time>
               
             
           </span>
@@ -472,14 +472,47 @@
 </ul>
 <h3 id="常见的浏览器内核有哪些"><a href="#常见的浏览器内核有哪些" class="headerlink" title="常见的浏览器内核有哪些?"></a>常见的浏览器内核有哪些?</h3><ul>
 <li>trident内核:IE, 360,搜狗浏览器,又称[MSHTML]</li>
-<li>Gecko内核: Netscape6及以上版本</li>
-<li>preston内核: Opera7及以上</li>
+<li>Gecko内核: Netscape6及以上版本,MozillaSuite firefox</li>
+<li>preston内核: Opera7及以上 现在为Blink</li>
 <li>Webkit内核: Safari,Chrome等 [Chrome的:Blink,webkit的分支]</li>
 </ul>
 <h3 id="介绍一下你对浏览器内核的理解"><a href="#介绍一下你对浏览器内核的理解" class="headerlink" title="介绍一下你对浏览器内核的理解"></a>介绍一下你对浏览器内核的理解</h3><ul>
 <li>主要分成两个部分,<strong>渲e染引擎layout engineer或者Rendering Engine</strong>和<strong>js引擎</strong></li>
 <li><strong>渲染引擎:</strong>负责取得网页的内容(HTML,XML,图像等等),整理讯息(列入加入CSS等),以及计算机的显示方式,然后会输出至显示器和打印机.浏览器的内核不同会对网页的语法解释也会有所不同,所以渲染的效果也不相同,</li>
 <li><strong>js引擎:</strong>解析和执行JavaScript来实现网页的动态效果.</li>
+</ul>
+<h3 id="html5有哪些新特性"><a href="#html5有哪些新特性" class="headerlink" title="html5有哪些新特性"></a>html5有哪些新特性</h3><ol>
+<li>绘图canvas</li>
+<li>用于媒介回放的video和audio元素</li>
+<li>本地离线储存loaclStroage长期存储数据,浏览器关闭后数据不会丢失</li>
+<li>语义化更好的内容元素,header,footer,acticle,nav,section</li>
+<li>表单控件calendar,data,time,email,search,url</li>
+</ol>
+<p><strong>如何让ie6/7/8支持h5新标签</strong> <strong>如何处理HTML5新标签的浏览器兼容问题</strong></p>
+<ul>
+<li>IE8/IE7/IE6支持通过document.createElement方法产生的标签,可以利用这一特性让这些浏览器支持html5新标签,注意还需要添加新标签的默认样式</li>
+</ul>
+<p><strong>简述一下你对语义化的理解</strong></p>
+<ul>
+<li>html语义化让结构更清晰，便于对浏览器、搜索引擎解析.</li>
+<li>搜索引擎的爬虫也依赖于HTML标记来确定上下文和各个关键字的权重，利于SEO</li>
+<li>使阅读源代码的人对网站更容易将网站分块，增强代码可读性</li>
+</ul>
+<p><strong>iframe标签有哪些缺点</strong></p>
+<ul>
+<li>iframe会阻塞主页面的onload事件</li>
+<li><p>搜素引擎的检索程序无法解读这种页面,不利于seo</p>
+</li>
+<li><p>如果要使用ifame内联框架,最好动态给iframe添加src属性,可以绕开这两个问题</p>
+<h3 id="title与h1的区别、b与strong的区别、i与em的区别？"><a href="#title与h1的区别、b与strong的区别、i与em的区别？" class="headerlink" title="title与h1的区别、b与strong的区别、i与em的区别？"></a>title与h1的区别、b与strong的区别、i与em的区别？</h3></li>
+<li>title属性没有明确意义只表示是个标题，H1则表示层次明确的标题，对页面信息的抓取也有很大的影响；</li>
+<li>strong是标明重点内容，有语气加强的含义，使用阅读设备阅读网络时：<strong>会重读，而<b>是展示强调内容。</b></strong></li>
+<li>i内容展示为斜体，em表示强调的文本；</li>
+<li>Physical Style Elements – 自然样式标签</li>
+<li>b, i, u, s, pre</li>
+<li>Semantic Style Elements – 语义样式标签</li>
+<li>strong, em, ins, del, code</li>
+<li>应该准确使用语义样式标签, 但不能滥用, 如果不能确定时首选使用自然样式标签。</li>
 </ul>
 <h3 id="浏览器是如何渲染页面的"><a href="#浏览器是如何渲染页面的" class="headerlink" title="浏览器是如何渲染页面的?"></a>浏览器是如何渲染页面的?</h3><ul>
 <li>渲染流程流程如下:</li>
@@ -521,10 +554,9 @@
 <li>防止src属性和link的href为空,当值为空时,浏览器很可能会把当前页面当成其属性值加载</li>
 <li>正确的闭合标签</li>
 <li>使用link而不是@import导入样式</li>
-<li>样式方法页首,js放在页尾</li>
-<li></li>
+<li>样式方在页首,js放在页尾</li>
 </ul>
-<ol start="2">
+<ol>
 <li>CSS部分</li>
 </ol>
 <ul>
@@ -549,8 +581,14 @@
 <li>全局变量存放在静态存储区,系统需要为其分配内存,一直到程序结束,才会释放内存,所以空间利用率比较低,大量的全局变量,很快会把内存用光,所以要少用全局变量.</li>
 <li>局部变量动态分配,随用随从栈内栈中申请,用完就释放</li>
 <li>全局变量由于每个函数都可以使用,所以任何一个函数的修改,如果修改了全局变量,都有可能影响到其他函数</li>
-<li></li>
 </ul>
+<h3 id="前端面试之自我介绍"><a href="#前端面试之自我介绍" class="headerlink" title="前端面试之自我介绍"></a>前端面试之自我介绍</h3><ul>
+<li>您好,我叫吴浩,来自安徽,今天是想来面试贵公司web前端开发岗位,我想从以下几个方法来介绍自己</li>
+</ul>
+<ol>
+<li>首先是工作经验方面,从接触前端至今已经2年多了,之前分别在宁国睿智科技有限公司和郑州不凡科技有限公司任职过前端开发这个岗位,起初写的最多就是pc端网站,也参与过响应式开发.小程序,最近在上家公司做的是幼儿园的后台管理系统.</li>
+<li>在学习方面,我毕业后并没有从事专业相关的岗位,而是对互联网产生了浓厚兴趣,通过自学,进入公司实习等途径接触到前端这个岗位,在这期间,我通过学习,逐渐对HTML5新特性,css/javascript,并且对前端语义化有了较为深刻的理解,可以根据ui设计稿快速完成构建高质量的html页面.并且能独立完成响应式网页开发和移动端web开发.我能够熟练的使用原生js进行编程</li>
+</ol>
 
       
     </div>
@@ -590,6 +628,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/22/web前端面试之vue/" rel="prev" title="web前端面试之vue">
+                web前端面试之vue <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -660,7 +702,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -754,7 +796,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">16</span>
+                      
+                    
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -848,7 +892,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前端面试问题"><span class="nav-number">1.</span> <span class="nav-text">前端面试问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前端页面有哪三层构成-分别是什么-起什么样的作用"><span class="nav-number">1.1.</span> <span class="nav-text">前端页面有哪三层构成,分别是什么?起什么样的作用?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的浏览器内核有哪些"><span class="nav-number">1.2.</span> <span class="nav-text">常见的浏览器内核有哪些?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍一下你对浏览器内核的理解"><span class="nav-number">1.3.</span> <span class="nav-text">介绍一下你对浏览器内核的理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器是如何渲染页面的"><span class="nav-number">1.4.</span> <span class="nav-text">浏览器是如何渲染页面的?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一个页面从输入-URL-到页面加载显示完成，这个过程中都发生了什么？"><span class="nav-number">1.5.</span> <span class="nav-text">一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#你有用到过哪些前端性能优化的方法"><span class="nav-number">1.6.</span> <span class="nav-text">你有用到过哪些前端性能优化的方法?</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前端面试问题"><span class="nav-number">1.</span> <span class="nav-text">前端面试问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前端页面有哪三层构成-分别是什么-起什么样的作用"><span class="nav-number">1.1.</span> <span class="nav-text">前端页面有哪三层构成,分别是什么?起什么样的作用?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的浏览器内核有哪些"><span class="nav-number">1.2.</span> <span class="nav-text">常见的浏览器内核有哪些?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍一下你对浏览器内核的理解"><span class="nav-number">1.3.</span> <span class="nav-text">介绍一下你对浏览器内核的理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#html5有哪些新特性"><span class="nav-number">1.4.</span> <span class="nav-text">html5有哪些新特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#title与h1的区别、b与strong的区别、i与em的区别？"><span class="nav-number">1.5.</span> <span class="nav-text">title与h1的区别、b与strong的区别、i与em的区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器是如何渲染页面的"><span class="nav-number">1.6.</span> <span class="nav-text">浏览器是如何渲染页面的?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一个页面从输入-URL-到页面加载显示完成，这个过程中都发生了什么？"><span class="nav-number">1.7.</span> <span class="nav-text">一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#你有用到过哪些前端性能优化的方法"><span class="nav-number">1.8.</span> <span class="nav-text">你有用到过哪些前端性能优化的方法?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前端面试之自我介绍"><span class="nav-number">1.9.</span> <span class="nav-text">前端面试之自我介绍</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -896,7 +940,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共41.2k字</span>
+  <span class="post-count">博客全站共48.1k字</span>
 </div>
 
         
